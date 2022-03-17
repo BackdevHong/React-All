@@ -1,23 +1,21 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  let posts = '강남 고기 맛집'
+  // function 함수(){
+  //   return 100;
+  // }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="black-nav">
+      <div className='font'>뙈지몬의 개발 Blog</div>
+      </div>
+      {/* <img src={logo} alt="귀여운 내사진" /> */}
+      <h4>{ posts }</h4>
     </div>
   );
 }
