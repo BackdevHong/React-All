@@ -9,21 +9,16 @@
         <div id="root"></div>
         <script type="text/babel">
             const rootElement = document.getElementById("root");
-            function random(){
-                const Number = Math.floor(Math.random() * (10 - 1) + 1);
-                const element = <>
-                <button>{Number}</button>
-                <button children={Number} />
-                <p>{Number}</p>
-                </>;
-                ReactDOM.render(element, rootElement);
+            const handleClick = () =>{
+                alert("pressed")
             }
-            setInterval(random, 1000);
+            const handleMouseOut = () =>{
+                alert("Bye~")
+            }
+            const element = <button onClick = {handleClick}
+                onMouseOut = { handleMouseOut }>Press</button>
+            ReactDOM.render(element,rootElement)
         </script>
-        <!-- <style>
-            .title{
-                color: red;
-            }
-        </style> -->
     </body>
-</html>
+</html> 
+
