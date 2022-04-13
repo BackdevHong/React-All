@@ -1,2 +1,2 @@
 # Fast_React
-React Learning
+패스트캠퍼스에서 배운 리엑트를 정리하는 레포입니다.
