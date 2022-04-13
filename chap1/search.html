@@ -19,18 +19,18 @@
                 setState({ typing: true, keyward: event.target.value })
             }
 
-            function handleClick(e){
+            function handleClick(){
                 setState({
                     typing: false,
-                    result: `We Find results of`
+                    result: `We Find results of ${state.keyward}`
                 })
-                console.log(e);
+                console.log();
             }
 
             return(
                 <>
                     <input onChange={handleChange}/>
-                    <button onClick={handleClick(this)}>search</button>
+                    <button onClick={handleClick}>search</button>
                     <p>
                         {state.typing ? `Looking For ${state.keyward}...` : state.result}
                     </p>
