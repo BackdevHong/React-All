@@ -20,20 +20,31 @@
         <script type="text/babel">
             const rootElement = document.getElementById("root");
 
+            const Child = () => {
+                const [text, setText] = React.useState();
+
+                function handleChange(event){
+                    setText(event.target.value)
+                }
+
+                return (
+                    <>
+                        <input onChange={handleChange}/>
+                        <p>{text}</p>                    
+                    </>
+                );
+            }
             const App = () => {
                 const [active, setActive] = React.useState(false);
 
                 function handleClick(){
                     setActive((prev) => !prev);
                 }
-
+                
                 return(
                     <>
                         <button onClick={handleClick}>Search</button>
-                            {active ? <>
-                                <input />
-                                <p></p>
-                            </> : null} 
+                            {active ? <Child /> : null} 
                     </>
                 )
             };
