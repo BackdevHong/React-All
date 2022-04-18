@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			crossorigin
+			src="https://unpkg.com/react@17/umd/react.development.js"
+		></script>
+		<script
+			crossorigin
+			src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+		></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			const rootElement = document.getElementById("root");
+
+			const todo = [
+				[
+					{ id: 1, values: "리엑트 배우기" },
+					{ id: 2, values: "일하기" },
+					{ id: 3, values: "택준이한테 배우기" },
+					{ id: 4, values: "응애" },
+				],
+				[
+					{ id: 4, values: "응애" },
+					{ id: 1, values: "리엑트 배우기" },
+					{ id: 2, values: "일하기" },
+					{ id: 3, values: "택준이한테 배우기" },
+				],
+				[
+					{ id: 3, values: "택준이한테 배우기" },
+					{ id: 1, values: "리엑트 배우기" },
+					{ id: 2, values: "일하기" },
+					{ id: 4, values: "응애" },
+				],
+				[
+					{ id: 2, values: "일하기" },
+					{ id: 1, values: "리엑트 배우기" },
+					{ id: 3, values: "택준이한테 배우기" },
+					{ id: 4, values: "응애" },
+				],
+			];
+
+			const App = () => {
+				const [items, setItems] = React.useState(todo[0]);
+
+				const completeTodo = (todo) => {
+					setItems((items) => items.filter((i) => i !== todo));
+				};
+
+				const restoreItems = () => {
+					setItems((items) => [
+						...items,
+						todo.find((item) => !items.includes(item)),
+					]);
+				};
+
+				React.useEffect(() => {
+					const interval = setInterval(() => {
+						const random = Math.floor(Math.random() * 3);
+						setItems(todo[random]);
+					}, 1000);
+				}, []);
+
+				return (
+					<>
+						{items.map((todo) => (
+							<div key={todo.id /*or todo.value*/}>
+								<button onClick={() => completeTodo(todo)}>
+									{todo.values}
+								</button>
+							</div>
+						))}
+						<br />
+						<br />
+						<button onClick={restoreItems}>restore</button>
+					</>
+				);
+			};
+
+			ReactDOM.render(<App />, rootElement);
+		</script>
+	</body>
+</html>
