@@ -10,6 +10,10 @@ export default function WelcomeDialog() {
 		// 		<h3>Thank You!</h3>
 		// 	</Dialog>
 		// </div>
-		<CustomDialog title="Welcome" desc="To My Webpage" />
+		// <CustomDialog title="Welcome" desc="To My Webpage" />
+		<CustomDialog
+			title={<button>Welcome</button>}
+			desc="Thanks"
+		></CustomDialog>
 	);
 }
