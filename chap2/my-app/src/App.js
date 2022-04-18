@@ -1,6 +1,7 @@
 import "./App.css";
-import Button from "./components/HOC/Button";
-import Input from "./components/HOC/Input";
+import Memo from "./components/Memoization/Memo";
+// import Button from "./components/HOC/Button";
+// import Input from "./components/HOC/Input";
 // import ThankyouDialog from "./components/Compostion2/ThankyouDialog";
 // import Composition from "./components/props/Composition";
 // import Extraction from "./components/props/Extraction/Extraction";
@@ -19,10 +20,8 @@ function App() {
 			{/* <List></List> 리스트 배열 */}
 			{/* <WelcomeDialog /> Dialog */}
 			{/* <ThankyouDialog></ThankyouDialog> */}
-			<Button></Button>
-			<br />
-			<br />
-			<Input></Input>
+			{/* <Button></Button> <br /> <br /> <Input></Input> HOC */}
+			<Memo></Memo>
 		</div>
 	);
 }
