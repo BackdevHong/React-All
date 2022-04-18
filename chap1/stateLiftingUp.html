@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			crossorigin
+			src="https://unpkg.com/react@17/umd/react.development.js"
+		></script>
+		<script
+			crossorigin
+			src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+		></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			const rootElement = document.getElementById("root");
+
+			const Id = ({ onIdChange }) => {
+				return (
+					<>
+						<label forhtml="id">ID : </label>
+						<input type="text" id="id" onChange={onIdChange} />
+					</>
+				);
+			};
+
+			const Password = ({ onPsChange }) => {
+				return (
+					<>
+						<label forhtml="pw">PW : </label>
+						<input type="password" id="pw" onChange={onPsChange} />
+					</>
+				);
+			};
+			const App = () => {
+				const [id, setId] = React.useState("");
+				const [password, setPassword] = React.useState("");
+
+				const onIdChange = (event) => {
+					setId(event.target.value);
+				};
+
+				const onPsChange = (event) => {
+					setPassword(event.target.value);
+				};
+
+				const handleClick = () => {
+					alert(`ID : ${id} : PS : ${password}`);
+				};
+
+				return (
+					<>
+						<Id onIdChange={onIdChange} />
+						<br />
+						<Password onPsChange={onPsChange} />
+						<button
+							disabled={
+								id.length > 0 && password.length > 0
+									? false
+									: true
+							}
+							onClick={handleClick}
+						>
+							Login
+						</button>
+					</>
+				);
+			};
+
+			ReactDOM.render(<App />, rootElement);
+		</script>
+	</body>
+</html>
