@@ -1,5 +1,6 @@
 import "./App.css";
-import Memo from "./components/Memoization/Memo";
+import Example from "./components/context/Example";
+// import Memo from "./components/Memoization/Memo";
 // import Button from "./components/HOC/Button";
 // import Input from "./components/HOC/Input";
 // import ThankyouDialog from "./components/Compostion2/ThankyouDialog";
@@ -13,6 +14,7 @@ import Memo from "./components/Memoization/Memo";
 function App() {
 	return (
 		<div className="App">
+			<Example />
 			{/* <Composition></Composition> 압축 */}
 			{/* <Extraction></Extraction> 추출 */}
 			{/* <LifeCycle></LifeCycle> 생명주기 */}
@@ -21,7 +23,7 @@ function App() {
 			{/* <WelcomeDialog /> Dialog */}
 			{/* <ThankyouDialog></ThankyouDialog> */}
 			{/* <Button></Button> <br /> <br /> <Input></Input> HOC */}
-			<Memo></Memo>
+			{/* <Memo></Memo> Memorization */}
 		</div>
 	);
 }
