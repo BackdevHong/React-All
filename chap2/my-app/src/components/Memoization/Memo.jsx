@@ -8,5 +8,6 @@ const commentList = [
 ];
 export default function Memo() {
 	const [comments, setComments] = useState(commentList);
+	setComments();
 	return <Comments commentList={comments} />;
 }
