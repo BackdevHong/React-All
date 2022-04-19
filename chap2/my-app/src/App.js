@@ -1,5 +1,6 @@
 import "./App.css";
-import Example from "./components/portal/Example";
+import Component from "./components/PropTypes/Component";
+// import Example from "./components/portal/Example";
 // import Memo from "./components/Memoization/Memo";
 // import Button from "./components/HOC/Button";
 // import Input from "./components/HOC/Input";
@@ -14,7 +15,7 @@ import Example from "./components/portal/Example";
 function App() {
 	return (
 		<div className="App">
-			<Example />
+			{/* <Example /> */}
 			{/* <Composition></Composition> 압축 */}
 			{/* <Extraction></Extraction> 추출 */}
 			{/* <LifeCycle></LifeCycle> 생명주기 */}
@@ -24,6 +25,8 @@ function App() {
 			{/* <ThankyouDialog></ThankyouDialog> */}
 			{/* <Button></Button> <br /> <br /> <Input></Input> HOC */}
 			{/* <Memo></Memo> Memorization */}
+			<Component></Component>
+
 		</div>
 	);
 }
