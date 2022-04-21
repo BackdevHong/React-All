@@ -1,5 +1,5 @@
 import "./App.css";
-import Component from "./components/PropTypes/Component";
+// import Component from "./components/PropTypes/Component";
 // import Example from "./components/portal/Example";
 // import Memo from "./components/Memoization/Memo";
 // import Button from "./components/HOC/Button";
@@ -25,7 +25,7 @@ function App() {
 			{/* <ThankyouDialog></ThankyouDialog> */}
 			{/* <Button></Button> <br /> <br /> <Input></Input> HOC */}
 			{/* <Memo></Memo> Memorization */}
-			<Component></Component>
+			{/* <Component></Component> */}
 
 		</div>
 	);
