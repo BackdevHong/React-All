@@ -1,15 +1,15 @@
 import React from "react";
-import ReactDOM from 'react-dom'
+import ReactDOM from "react-dom";
 import ThankyouDialog from "./ThankyouDialog";
 
-const Portal = ( props ) => {
-  const el = document.getElementById("portal");
-  return ReactDOM.createPortal(props.children, el);
+const Portal = (props) => {
+	const el = document.getElementById("portal");
+	return ReactDOM.createPortal(props.children, el);
 };
 
 export default function Example() {
 	return (
-		<div onClick={() => console.log('div')}>
+		<div onClick={() => console.log("div")}>
 			<Portal>
 				<ThankyouDialog />
 			</Portal>
