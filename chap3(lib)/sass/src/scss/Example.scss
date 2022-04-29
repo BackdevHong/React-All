@@ -1,7 +1,63 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: red;
+@use "./foundation/base";
 
-.font {
-	font: 100% $font-stack;
-	color: $primary-color;
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		padding: 6px 13px;
+		text-decoration: none;
+		color: base.$primary-color;
+	}
+}
+
+@mixin theme($theme: darkGray) {
+	background-color: $theme;
+	box-shadow: 0 0 3px rgba($color: $theme, $alpha: 0.25);
+	color: #fff;
+}
+
+.info {
+	@include theme($theme: Blue);
+}
+
+.test {
+	@include theme($theme: gray);
+}
+
+.success {
+	@include theme($theme: DarkRed);
+}
+
+%message-shared {
+	border: 3px solid #ccc;
+	padding: 10px;
+	color: #333;
+}
+
+.message {
+	@extend %message-shared;
+}
+
+.success2 {
+	@extend %message-shared;
+	border-color: green;
+}
+
+.error {
+	@extend %message-shared;
+	border-color: red;
+}
+
+.warning {
+	@extend %message-shared;
+	border-color: yellow;
 }
