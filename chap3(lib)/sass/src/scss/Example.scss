@@ -61,3 +61,19 @@ nav {
 	@extend %message-shared;
 	border-color: yellow;
 }
+
+@mixin avatar($size, $circle: false) {
+	width: $size;
+	height: $size;
+
+	@if $circle {
+		border: calc($size / 2) solid yellow;
+	}
+}
+
+.square-av {
+	@include avatar(100px, $circle: false);
+}
+.circle-av {
+	@include avatar(100px, $circle: true);
+}

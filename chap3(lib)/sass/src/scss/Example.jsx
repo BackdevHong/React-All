@@ -33,6 +33,10 @@ export default function Example() {
 				<p className="warning">경고!</p>
 				<p className="error">에러!</p>
 			</div>
+			<div>
+				<div className="square-av">asdf</div>
+				<div className="circle-av">asdf</div>
+			</div>
 		</>
 	);
 }
