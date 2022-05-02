@@ -34,9 +34,10 @@ export default function Example() {
 				<p className="error">에러!</p>
 			</div>
 			<div>
-				<div className="square-av">asdf</div>
-				<div className="circle-av">asdf</div>
+				<div className="square-av"></div>
+				<div className="circle-av"></div>
 			</div>
+			<div className="sidebar"></div>
 		</>
 	);
 }

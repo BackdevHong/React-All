@@ -65,9 +65,9 @@ nav {
 @mixin avatar($size, $circle: false) {
 	width: $size;
 	height: $size;
-
+	background-color: aqua;
 	@if $circle {
-		border: calc($size / 2) solid yellow;
+		border-radius: calc($size / 2);
 	}
 }
 
@@ -76,4 +76,18 @@ nav {
 }
 .circle-av {
 	@include avatar(100px, $circle: true);
+}
+
+@function pow($base, $exponent) {
+	$result: 1;
+	@for $_ from 1 through $exponent {
+		$result: $result * $base;
+	}
+	@return $result;
+}
+
+.sidebar {
+	float: left;
+	background-color: red;
+	margin-left: pow(4, 3) * 1px;
 }
