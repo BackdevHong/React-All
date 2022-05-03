@@ -1,11 +1,14 @@
 import React from "react";
-import { useRecoilState } from "recoil";
-import { fontSizeState } from "./store";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { fontSizeState, fontSizeLabelState } from "./store";
 
 export default function FontButton() {
-	const [fontSize, setFontSize] = useRecoilState(fontSizeState);
+    const [fontSize, setFontSize] = useRecoilState(fontSizeState);
+    const fontSizeLabel = useRecoilValue(fontSizeLabelState)
     return (
         <>
+            
+            <div>Current font size : {fontSizeLabel}</div>
             <button
                 onClick={() => setFontSize((size) => size + 1)}
             >
