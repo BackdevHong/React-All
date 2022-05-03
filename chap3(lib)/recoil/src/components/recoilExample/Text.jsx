@@ -6,7 +6,7 @@ export default function Text() {
 	const [fontSize] = useRecoilState(fontSizeState);
 	return (
 		<div>
-			<p style={{ fontSize }}>Text</p>
+			<p style={{ fontSize }}>이 글자가 커질것입니다..</p>
 		</div>
 	);
 }
