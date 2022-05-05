@@ -10,7 +10,7 @@ export default function FontButton() {
             
             <div>Current font size : {fontSizeLabel}</div>
             <button
-                onClick={() => setFontSize((size) => size + 1)}
+                onClick={() => setFontSize((size) => size + 2)}
             >
                 크기를 높이자 히히
             </button>
