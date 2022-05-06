@@ -1,15 +1,15 @@
 /* eslint-disable no-lone-blocks */
 import React, { useState } from 'react'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { todoListState } from './todoListState'
+import { filteredTodoListState, todoListState } from './todoListState'
 
 export default function TodoList() {
-  const todoList = useRecoilValue(todoListState);
+  const todoList = useRecoilValue(filteredTodoListState);
 
   return (
     <>
       {/* <TodoListStats /> */}
-      {/* <TodoListFilters /> */}
+      <TodoListFilters />
       <TodoItemCreator />
 
       {todoList.map((todoItem) => (
@@ -17,6 +17,25 @@ export default function TodoList() {
       ))}
     </>
   );
+}
+
+function TodoListFilters() {
+    const [filter, setFilter] = useRecoilState(filteredTodoListState)
+
+    const updateFilter = ({ target: { value } }) => {
+        setFilter(value)
+    }
+
+    return (
+        <>
+            Filter:
+            <select value={filter} onChange={updateFilter}>
+                <option value="Show All">All</option>
+                <option value="Show Completed">Completed</option>
+                <option value="Show Uncompleted">Uncompleted</option>
+            </select>
+        </>
+    )
 }
 
 function TodoItemCreator() {
