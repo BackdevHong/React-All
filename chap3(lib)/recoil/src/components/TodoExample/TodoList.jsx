@@ -26,7 +26,7 @@ function TodoItemCreator() {
   const addItem = () => {
     setTodoList((oldTodoList) => [
       ...oldTodoList,
-      {
+      {   
         id: getId(),
         text: inputValue,
         isComplete: false,
