@@ -1,9 +1,10 @@
 /* eslint-disable no-lone-blocks */
 import React, { useState } from 'react'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { filteredTodoListState, todoListState } from './todoListState'
+import { filteredTodoListState, todoListFilterState, todoListState } from './todoListState'
 
 export default function TodoList() {
+  // changed from todoListState to filteredTodoListState
   const todoList = useRecoilValue(filteredTodoListState);
 
   return (
@@ -13,29 +14,29 @@ export default function TodoList() {
       <TodoItemCreator />
 
       {todoList.map((todoItem) => (
-        <TodoItem key={todoItem.id} item={todoItem} />
+        <TodoItem item={todoItem} key={todoItem.id} />
       ))}
     </>
   );
 }
 
 function TodoListFilters() {
-    const [filter, setFilter] = useRecoilState(filteredTodoListState)
+  const [filter, setFilter] = useRecoilState(todoListFilterState);
 
-    const updateFilter = ({ target: { value } }) => {
-        setFilter(value)
-    }
+  const updateFilter = ({target: {value}}) => {
+    setFilter(value);
+  };
 
-    return (
-        <>
-            Filter:
-            <select value={filter} onChange={updateFilter}>
-                <option value="Show All">All</option>
-                <option value="Show Completed">Completed</option>
-                <option value="Show Uncompleted">Uncompleted</option>
-            </select>
-        </>
-    )
+  return (
+    <>
+      Filter:
+      <select value={filter} onChange={updateFilter}>
+        <option value="Show All">All</option>
+        <option value="Show Completed">Completed</option>
+        <option value="Show Uncompleted">Uncompleted</option>
+      </select>
+    </>
+  );
 }
 
 function TodoItemCreator() {

@@ -6,15 +6,15 @@ export const todoListState = atom({
 })
 
 export const todoListFilterState = atom({
-    key: "todoListFilterState",
-    default: "Show All"
-})
+    key: 'todoListFilterState',
+    default: 'Show All',
+});
 
 export const filteredTodoListState = selector({
-    key: "filteredTodoListState",
+    key: 'filteredTodoListState',
     get: ({ get }) => {
         const filter = get(todoListFilterState);
-        const list = get(todoListState)
+        const list = get(todoListState);
 
         switch (filter) {
             case 'Show Completed':
@@ -24,5 +24,5 @@ export const filteredTodoListState = selector({
             default:
                 return list;
         }
-    }
-})
+    },
+});
