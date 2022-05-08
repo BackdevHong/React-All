@@ -24,16 +24,16 @@ function TodoListFilters() {
   const [filter, setFilter] = useRecoilState(todoListFilterState);
 
   const updateFilter = ({target: {value}}) => {
-    setFilter(value);
-  };
-
+        setFilter(value);
+    };
+    
   return (
     <>
       Filter:
       <select value={filter} onChange={updateFilter}>
-        <option value="Show All">All</option>
-        <option value="Show Completed">Completed</option>
-        <option value="Show Uncompleted">Uncompleted</option>
+        <option value="Show All">모두 보이기</option>
+        <option value="Show Completed">체크된 항목만 보이기</option>
+        <option value="Show Uncompleted">체크하지 않은 항목만 보이기</option>
       </select>
     </>
   );
