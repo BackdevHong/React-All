@@ -3,10 +3,6 @@ import Link from "next/link";
 import Layout, { siteTitle } from "../../components/layout";
 import utilStyles from "../../styles/utils.module.css";
 
-function heh() {
-	return;
-}
-
 export default function Home() {
 	return (
 		<Layout home>
