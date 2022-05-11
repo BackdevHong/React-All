@@ -14,6 +14,9 @@ function App() {
                 <Text></Text>
                 <Charactor></Charactor> */}
                 <TodoList></TodoList>
+                <div>
+                    리코일 클리어!
+                </div>
             </RecoilRoot>
         </div>
     );
