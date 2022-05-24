@@ -15,8 +15,10 @@ export default function Home() {
 					저는 코딩에 &quot;초보&quot;라서.. 앞으로 잘 부탁드릴게요..
 				</p>
 				<p>아! 저는 지금 어떤 언어를 공부하고 있냐면..</p>
-				<p className={utilStyles.fontWeight}>
-					React, Vue, Scss, StyleComponent, NextJS
+				<p className={utilStyles.fontWeight}>Vue, Vuex, Nodejs, PHP</p>
+				<p>
+					제 목표는 풀스택 개발자에요! ( 프론트언어만 배우고 있지만..
+					백엔드도 착실히 할거라구욧! )
 				</p>
 				<p>
 					아!
