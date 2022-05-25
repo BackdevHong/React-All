@@ -58,4 +58,6 @@
 
 .nostyle {
 	list-style: none;
+	text-align: center;
+	line-height: 1;
 }
