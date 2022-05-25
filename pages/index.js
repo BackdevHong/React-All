@@ -35,18 +35,20 @@ export default function Home() {
 					<li>
 						1. 알고리즘 정리 -
 						<Link href="https://docs.google.com/document/d/1d4c1lsQ41Nx8p1jAWJIJ1_DX_C0t6YI5iYB4cbtMUyo/edit?usp=sharing">
-							링크
+							<a>링크</a>
 						</Link>
 					</li>
 					<li>
 						2. Vue로 만든 Todo 사이트 -
 						<Link href="https://vuetodo.dothome.com">
-							가보기(현재 서비스 종료)
+							<a>링크(현재 서비스 종료)</a>
 						</Link>
 					</li>
 					<li>
 						3. 클린 코드 정리 -
-						<Link href="https://www.notion.so/1-Clean-Code-9ff45d7137d84962a1af8fa76aad4470"></Link>
+						<Link href="https://www.notion.so/1-Clean-Code-9ff45d7137d84962a1af8fa76aad4470">
+							<a>링크</a>
+						</Link>
 					</li>
 				</ul>
 			</section>
