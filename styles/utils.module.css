@@ -55,3 +55,7 @@
 .lightText {
 	color: #666;
 }
+
+.nostyle {
+	list-style: none;
+}

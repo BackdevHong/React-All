@@ -31,7 +31,7 @@ export default function Home() {
 			</section>
 			<section className={utilStyles.headingMd}>
 				<h2>프로젝트, 포트폴리오</h2>
-				<ul>
+				<ul className={utilStyles.nostyle}>
 					<li>
 						1. 알고리즘 정리 -
 						<Link href="https://docs.google.com/document/d/1d4c1lsQ41Nx8p1jAWJIJ1_DX_C0t6YI5iYB4cbtMUyo/edit?usp=sharing">
