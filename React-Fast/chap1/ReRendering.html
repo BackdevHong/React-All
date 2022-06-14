@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            const rootElement = document.getElementById("root");
+            function random(){
+                const Number = Math.floor(Math.random() * (10 - 1) + 1);
+                const element = <>
+                <button>{Number}</button>
+                <button children={Number} />
+                <p>{Number}</p>
+                </>;
+                ReactDOM.render(element, rootElement);
+            }
+            setInterval(random, 1000);
+        </script>
+        <!-- <style>
+            .title{
+                color: red;
+            }
+        </style> -->
+    </body>
+</html>

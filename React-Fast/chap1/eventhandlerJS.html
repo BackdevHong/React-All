@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="test">
+            <button OnClick="document.getElementById('root').innerHTML=Date()">Time</button> <!-- 인라인 방식 -->
+        </div>
+            <button id="button">날 눌러봐!</button> 
+        <div id="root"></div>
+        <script type="text/babel">
+            const button = document.getElementById("button");
+            button.addEventListener("mouseout", () => alert("bye"))
+            button.addEventListener("click", () => document.getElementById("root").innerHTML=Date()) // script에 직접 입력하는 방식
+        </script>
+    </body>
+</html>
+
+<!-- 카멜 케이스? -->
+<!-- 기본 문장 : on click -->
+<!-- 카멜 케이스 : onClick -->
+<!-- 파스칼 케이스 : OnClick -->
+<!-- 케밥 케이스 : on-click -->
+<!-- 스네이크 케이스 : on_click -->

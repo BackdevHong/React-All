@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const rootElement = document.getElementById("root")
+        const state = { keyward: "", typing: false, result: ""}
+        const App = () => {
+            function handleChange(){
+                setState({ typing: true, keyward: event.target.value })
+            }
+
+            function handleClick(){
+                setState({
+                    typing: false,
+                    result: `We Find results of ${state.keyward}`
+                })
+                console.log();
+            }
+
+            return(
+                <>
+                    <input onChange={handleChange}/>
+                    <button onClick={handleClick}>search</button>
+                    <p>
+                        {state.typing ? `Looking For ${state.keyward}...` : state.result}
+                    </p>
+                </>
+            );
+        };
+
+        function setState(newState){
+            Object.assign(state, newState)
+            render();
+        }
+
+        function render() {
+            ReactDOM.render(<App />, rootElement)
+        }
+
+        ReactDOM.render(<App />, rootElement)
+    </script>
+</body>
+</html>

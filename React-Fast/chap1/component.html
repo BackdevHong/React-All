@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const rootElement = document.getElementById("root")
+        
+        const App = () => {
+            const [Keyward, setKeyward] = React.useState("");
+            const [Typing, setTyping] = React.useState(false);
+            const [result, setResult] = React.useState("");
+
+            function handleChange(event){
+                setResult(`당신은 현재 ${event.target.value}를 검색하고 있습니다.`)
+                setKeyward(event.target.value)
+                setTyping(true)
+            }
+
+            function handleClick(){
+                setTyping(false)
+                setResult(`${Keyward}에 대한것을 검색중입니다..`)
+            }
+
+            return(
+                <>
+                    <input onChange={handleChange}/>
+                    <button onClick={handleClick}>search</button>
+                    <p> 
+                        {result}
+                    </p>
+                </>
+            );
+        };
+        ReactDOM.render(<App />, rootElement)
+    </script>
+</body>
+</html>
